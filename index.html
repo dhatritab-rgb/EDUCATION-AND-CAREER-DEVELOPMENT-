@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Compass | Student Guidance Platform</title>
+    <meta
+      name="description"
+      content="Official student guidance platform that helps learners choose the right stream, explore careers, and find coaching centers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">Career Compass</a>
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#ai" data-i18n="nav.ai">24/7 AI</a>
+        <a href="#coaching" data-i18n="nav.coaching">Coaching</a>
+        <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+      </nav>
+      <label class="language-chip">
+        <span data-i18n="nav.language">Language</span>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+        </select>
+      </label>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Trusted guidance for every student</p>
+          <h1 data-i18n="hero.title">Choose the right stream and build a future with confidence.</h1>
+          <p class="hero-text" data-i18n="hero.text">
+            Career Compass offers clear guidance on academic streams, career direction, coaching hubs, and secure student support around the clock.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#auth" data-i18n="hero.primary">Create secure account</a>
+            <a class="btn secondary" href="#ai" data-i18n="hero.secondary">Meet the AI mentor</a>
+          </div>
+          <div class="trust-pill">
+            <span>🔐</span>
+            <span data-i18n="hero.trust">Hashed credentials • protected sessions • 24/7 assistance</span>
+          </div>
+        </div>
+
+        <div class="card auth-card" id="auth">
+          <div class="card-head">
+            <h2 data-i18n="auth.title">Secure access</h2>
+            <p data-i18n="auth.subtitle">Sign in or create your student account.</p>
+          </div>
+          <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+          <form id="loginForm" class="auth-form">
+            <h3 data-i18n="auth.loginTitle">Sign in</h3>
+            <label>
+              <span data-i18n="auth.email">Email</span>
+              <input type="email" id="loginEmail" required />
+            </label>
+            <label>
+              <span data-i18n="auth.password">Password</span>
+              <input type="password" id="loginPassword" required />
+            </label>
+            <button class="btn primary full" type="submit" data-i18n="auth.loginButton">Enter dashboard</button>
+          </form>
+
+          <form id="registerForm" class="auth-form alt-form">
+            <h3 data-i18n="auth.registerTitle">Create account</h3>
+            <label>
+              <span data-i18n="auth.name">Full name</span>
+              <input type="text" id="registerName" required />
+            </label>
+            <label>
+              <span data-i18n="auth.email">Email</span>
+              <input type="email" id="registerEmail" required />
+            </label>
+            <label>
+              <span data-i18n="auth.password">Password</span>
+              <input type="password" id="registerPassword" required minlength="8" />
+            </label>
+            <button class="btn secondary full" type="submit" data-i18n="auth.registerButton">Register</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="about.eyebrow">Why students trust us</p>
+          <h2 data-i18n="about.title">Guidance that turns confusion into direction.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature-card">
+            <h3 data-i18n="about.streamTitle">Stream clarity</h3>
+            <p data-i18n="about.streamText">Understand Science, Commerce, Arts, and vocational choices with simple roadmaps.</p>
+          </article>
+          <article class="card feature-card">
+            <h3 data-i18n="about.careerTitle">Career suggestions</h3>
+            <p data-i18n="about.careerText">Get personalized recommendations that match skills, interests, and academic goals.</p>
+          </article>
+          <article class="card feature-card">
+            <h3 data-i18n="about.coachingTitle">Coaching access</h3>
+            <p data-i18n="about.coachingText">Find trusted coaching centers and nearby preparation hubs for exams and careers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai" class="section split-section">
+        <div class="card wide-card">
+          <p class="eyebrow" data-i18n="ai.eyebrow">Always available</p>
+          <h2 data-i18n="ai.title">24/7 AI mentor for student doubts.</h2>
+          <p data-i18n="ai.text">Students can ask questions anytime about streams, college options, scholarships, and career planning. The platform keeps support available even after class hours.</p>
+          <ul>
+            <li data-i18n="ai.point1">Instant answers on stream selection and career paths.</li>
+            <li data-i18n="ai.point2">Support for exam prep, college choices, and skill growth.</li>
+            <li data-i18n="ai.point3">Privacy-aware student experience with secure account access.</li>
+          </ul>
+        </div>
+        <div class="card stat-card">
+          <h3 data-i18n="ai.statsTitle">Live support snapshot</h3>
+          <div class="stat">98% <span data-i18n="ai.stat1">student satisfaction</span></div>
+          <div class="stat">24/7 <span data-i18n="ai.stat2">AI availability</span></div>
+          <div class="stat">10+ <span data-i18n="ai.stat3">coaching locations</span></div>
+        </div>
+      </section>
+
+      <section id="coaching" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="coaching.eyebrow">Coaching centers</p>
+          <h2 data-i18n="coaching.title">Find the right support center near you.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature-card">
+            <h3>Delhi</h3>
+            <p data-i18n="coaching.delhi">Career Edge Academy • UPSC and entrance test coaching.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Mumbai</h3>
+            <p data-i18n="coaching.mumbai">Bright Future Institute • streams and college guidance.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Bengaluru</h3>
+            <p data-i18n="coaching.bengaluru">SkillBridge Center • technology and career readiness.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footer.text">Career Compass is an official student support platform built for clarity, security, and future readiness.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

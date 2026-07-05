@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Compass | Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">Career Compass</a>
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="#insights" data-i18n="nav.insights">Insights</a>
+        <a href="#coaching" data-i18n="nav.coaching">Coaching</a>
+      </nav>
+      <div class="dashboard-actions">
+        <label class="language-chip">
+          <span data-i18n="nav.language">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+          </select>
+        </label>
+        <button id="logoutBtn" class="btn secondary" data-i18n="dashboard.logout">Logout</button>
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="card welcome-card">
+        <div>
+          <p class="eyebrow" data-i18n="dashboard.eyebrow">Secure student dashboard</p>
+          <h1 id="welcomeName" data-i18n="dashboard.title">Welcome back</h1>
+          <p id="dashboardSummary" data-i18n="dashboard.summary">Your career plan is ready and your account is protected by secure session controls.</p>
+        </div>
+        <div class="security-badge">
+          <span>🛡️</span>
+          <strong data-i18n="dashboard.security">High security mode</strong>
+        </div>
+      </section>
+
+      <section id="insights" class="dashboard-grid">
+        <article class="card insight-card">
+          <h3 data-i18n="dashboard.streamsTitle">Recommended streams</h3>
+          <ul>
+            <li data-i18n="dashboard.stream1">Computer Science and AI for analytical thinkers.</li>
+            <li data-i18n="dashboard.stream2">Commerce with finance for business-focused learners.</li>
+            <li data-i18n="dashboard.stream3">Arts and humanities for communication and public service careers.</li>
+          </ul>
+        </article>
+
+        <article class="card insight-card">
+          <h3 data-i18n="dashboard.aiTitle">AI mentor status</h3>
+          <p data-i18n="dashboard.aiText">Online now. Ask about college choices, career planning, or stream selection anytime.</p>
+          <div class="ai-pill">● <span data-i18n="dashboard.aiOnline">24/7 online</span></div>
+        </article>
+
+        <article class="card insight-card">
+          <h3 data-i18n="dashboard.coachingTitle">Nearby coaching centers</h3>
+          <ul>
+            <li data-i18n="dashboard.coaching1">Delhi • Career Edge Academy</li>
+            <li data-i18n="dashboard.coaching2">Mumbai • Bright Future Institute</li>
+            <li data-i18n="dashboard.coaching3">Bengaluru • SkillBridge Center</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

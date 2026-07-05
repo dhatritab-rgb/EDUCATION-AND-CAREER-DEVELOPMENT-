@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot | CareerPath Academy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .chat-shell { max-width: 980px; margin: 2rem auto; padding: 0 1rem 2rem; }
+      .chat-card { background: rgba(255,255,255,0.97); border-radius: 24px; box-shadow: 0 20px 45px rgba(20,33,61,0.12); padding: 1rem; }
+      .chat-window { border: 1px solid rgba(20,33,61,0.08); border-radius: 18px; padding: 1rem; min-height: 420px; display: flex; flex-direction: column; gap: 0.8rem; background: linear-gradient(180deg, #fbfdff, #f7faff); }
+      .bubble { max-width: 76%; padding: 0.8rem 1rem; border-radius: 16px; line-height: 1.5; }
+      .bubble.bot { align-self: flex-start; background: white; color: #14213d; box-shadow: 0 8px 18px rgba(20,33,61,0.08); }
+      .bubble.user { align-self: flex-end; background: linear-gradient(135deg, #2563eb, #14b8a6); color: white; }
+      .chat-input-row { display: flex; gap: 0.6rem; margin-top: 0.8rem; }
+      .chat-input-row input { flex: 1; border: 1px solid rgba(20,33,61,0.12); border-radius: 999px; padding: 0.9rem 1rem; }
+      .chat-input-row button { border: none; border-radius: 999px; padding: 0.9rem 1.1rem; background: linear-gradient(135deg, #2563eb, #14b8a6); color: white; cursor: pointer; }
+      .quick-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+      .quick-actions button { border: none; padding: 0.6rem 0.8rem; border-radius: 999px; background: #eef4ff; color: #26456b; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">CP</div>
+        <div>
+          <h1>CareerPath Academy</h1>
+          <p>for future builders</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/profile.html">Profile</a>
+        <a href="/dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="chat-shell">
+      <section class="chat-card">
+        <h2>AI Career Mentor</h2>
+        <p>Ask about streams, careers, exams, or coaching support.</p>
+        <div class="chat-window" id="chatWindow">
+          <div class="bubble bot">Hello! I can guide you with stream selection, career paths, colleges, and coaching choices.</div>
+        </div>
+        <div class="quick-actions">
+          <button data-question="Which stream is best for AI?">Which stream is best for AI?</button>
+          <button data-question="What careers suit me best?">What careers suit me best?</button>
+          <button data-question="Where can I find good coaching?">Where can I find good coaching?</button>
+        </div>
+        <form id="chatForm" class="chat-input-row">
+          <input id="chatInput" placeholder="Type your question..." required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const chatWindow = document.getElementById('chatWindow');
+      const chatForm = document.getElementById('chatForm');
+      const chatInput = document.getElementById('chatInput');
+
+      function addBubble(text, role) {
+        const bubble = document.createElement('div');
+        bubble.className = `bubble ${role}`;
+        bubble.textContent = text;
+        chatWindow.appendChild(bubble);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      function answerQuestion(text) {
+        const lower = text.toLowerCase();
+        if (lower.includes('ai')) return 'For AI, Science with Math and Computer Science is usually the strongest foundation.';
+        if (lower.includes('career') || lower.includes('suit')) return 'Your interests, skills, and academic strength should guide your career choice. We can help you compare options.';
+        if (lower.includes('coaching')) return 'You can look for coaching centers in your city that focus on entrance exams, skill growth, and college guidance.';
+        return 'That is a great question. A mentor can help you compare streams, colleges, and career options in a structured way.';
+      }
+
+      chatForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const question = chatInput.value.trim();
+        if (!question) return;
+        addBubble(question, 'user');
+        chatInput.value = '';
+        setTimeout(() => addBubble(answerQuestion(question), 'bot'), 500);
+      });
+
+      document.querySelectorAll('[data-question]').forEach((button) => {
+        button.addEventListener('click', () => {
+          chatInput.value = button.getAttribute('data-question');
+          chatInput.focus();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerPath Academy for future builders</title>
+    <meta name="description" content="A premium student guidance platform for streams, careers, coaching and future planning." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">CP</div>
+        <div>
+          <h1>CareerPath Academy</h1>
+          <p>for future builders</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#ai">AI Mentor</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#login">Login</a>
+      </nav>
+    </header>
+
+    <main class="hero-layout">
+      <section class="hero-copy">
+        <span class="pill">Trusted by ambitious students</span>
+        <h2>Clear doubts. Strong direction. A smarter future.</h2>
+        <p>Discover the right streams, career paths, nearby coaching centers, and expert guidance with a secure, premium experience built for students.</p>
+        <div class="hero-actions">
+          <a href="#login" class="btn btn-primary">Open secure login</a>
+          <a href="#ai" class="btn btn-secondary">Explore AI support</a>
+        </div>
+        <ul class="bullet-list">
+          <li>Stream guidance</li>
+          <li>Career planning</li>
+          <li>Coaching center discovery</li>
+          <li>24/7 AI availability</li>
+        </ul>
+      </section>
+
+      <section id="login" class="login-card">
+        <div class="login-card-inner">
+          <div class="login-header">
+            <h3>Welcome back</h3>
+            <p>Secure sign in for student guidance</p>
+          </div>
+          <div id="messageBox" class="message-box"></div>
+          <form id="loginForm" class="auth-form">
+            <label>
+              <span>Email</span>
+              <input type="email" id="loginEmail" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="loginPassword" required />
+            </label>
+            <button class="btn btn-primary full" type="submit">Sign in</button>
+          </form>
+
+          <form id="registerForm" class="auth-form alt-form">
+            <h4>Create account</h4>
+            <label>
+              <span>Full name</span>
+              <input type="text" id="registerName" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" id="registerEmail" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="registerPassword" required minlength="8" />
+            </label>
+            <button class="btn btn-secondary full" type="submit">Register</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <section id="about" class="info-section">
+      <article class="info-card">
+        <h3>Guidance that feels clear</h3>
+        <p>Understand science, commerce, arts, and modern career paths in one trusted space.</p>
+      </article>
+      <article class="info-card">
+        <h3>Coaching support</h3>
+        <p>Find reliable coaching centers and preparation hubs suited to your goals.</p>
+      </article>
+      <article class="info-card">
+        <h3>AI mentor anytime</h3>
+        <p>Get 24/7 support for doubts, planning, streams, exams, and career steps.</p>
+      </article>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
