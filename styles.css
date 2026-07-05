@@ -122,8 +122,38 @@ a { text-decoration: none; color: inherit; }
 .info-card h3 { margin-top: 0; }
 .info-card p { margin-bottom: 0; color: var(--muted); line-height: 1.7; }
 
+.reviews-section {
+  padding: 0 2rem 2.2rem;
+}
+.section-title {
+  margin-bottom: 1rem;
+}
+.section-title h3 { margin-bottom: 0.25rem; }
+.section-title p { color: var(--muted); margin: 0; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.review-card {
+  background: var(--surface);
+  border: 1px solid rgba(20, 33, 61, 0.06);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+}
+.review-card p {
+  color: var(--text);
+  line-height: 1.7;
+}
+.site-footer {
+  text-align: center;
+  padding: 0 2rem 2rem;
+  color: var(--muted);
+}
+
 @media (max-width: 920px) {
-  .hero-layout, .info-section { grid-template-columns: 1fr; }
+  .hero-layout, .info-section, .reviews-grid { grid-template-columns: 1fr; }
   .login-card-inner { transform: none; }
 }
 
